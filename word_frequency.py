@@ -4,6 +4,28 @@ STOP_WORDS = [
     'will', 'with'
 ]
 
+with open('seneca_falls.txt', 'r') as f:
+    data = f.read()
+    print(data)
+
+    # define punctuation
+punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+
+# remove punctuation from the string
+no_punct = ""
+for char in data:
+    if char not in punctuations:
+        no_punct = no_punct + char
+
+# display the unpunctuated string
+new_text = no_punct.lower().split(" ")
+print(new_text)
+words_removed = []
+for word in new_text:
+    if word not in STOP_WORDS:
+        words_removed += word
+print(words_removed)
+
 
 def print_word_freq(file):
     """Read in `file` and print out the frequency of words in that file."""
