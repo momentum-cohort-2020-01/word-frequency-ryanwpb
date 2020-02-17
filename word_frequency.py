@@ -1,4 +1,4 @@
-from collections import Counter
+
 STOP_WORDS = [
     'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from', 'has', 'he',
     'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to', 'were',
@@ -7,7 +7,6 @@ STOP_WORDS = [
 
 with open('seneca_falls.txt', 'r') as f:
     data = f.read()
-
     # define punctuation
 punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
 
@@ -24,8 +23,16 @@ for word in list(words):  # iterating on a copy since removing will mess things 
     if word in STOP_WORDS:
         words.remove(word)
 
-count_words = Counter(words)
-print("HERE ", count_words)
+
+def get_word_freq(words):
+
+    for entry in words:
+        print('Frequency of ', entry, 'is :', words.count(entry))
+
+
+if __name__ == "__main__":
+    get_word_freq(words)
+
 # def print_word_freq(file):
 #     """Read in `file` and print out the frequency of words in that file."""
 #     pass
