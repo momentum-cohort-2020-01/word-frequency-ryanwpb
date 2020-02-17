@@ -27,7 +27,7 @@ for word in list(words):  # iterating on a copy since removing will mess things 
 def get_word_freq(words):
 
     for entry in words:
-        print('Frequency of ', entry, 'is :', words.count(entry))
+        print(entry, 'is counted:', words.count(entry))
 
 
 if __name__ == "__main__":
