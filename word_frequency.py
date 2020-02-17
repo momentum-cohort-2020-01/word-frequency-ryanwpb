@@ -7,7 +7,6 @@ STOP_WORDS = [
 
 with open('seneca_falls.txt', 'r') as f:
     data = f.read()
-    print(data)
 
     # define punctuation
 punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
@@ -25,14 +24,8 @@ for word in list(words):  # iterating on a copy since removing will mess things 
     if word in STOP_WORDS:
         words.remove(word)
 
-
-wordfreq = [words.count(w) for w in words]
-wordcount = dict(list(zip(words, wordfreq)))
-print(wordcount)
-
-
 count_words = Counter(words)
-print(count_words)
+print("HERE ", count_words)
 # def print_word_freq(file):
 #     """Read in `file` and print out the frequency of words in that file."""
 #     pass
